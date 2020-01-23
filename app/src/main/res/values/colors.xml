@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--    <color name="colorPrimary">#008577</color>-->
+    <color name="colorPrimary">#0396D3</color>
+    <color name="colorPrimaryDark">#01579B</color>
+    <color name="colorAccent">#F3633C</color>
+
+
+    <color name="blue_grey_500">#607D8B</color>
+
+    <color name="blue_grey_600">#546E7A</color>
+
+    <color name="blue_grey_700">#455A64</color>
+
+    <color name="blue_grey_800">#37474F</color>
+
+    <color name="blue_grey_900">#263238</color>
+
+</resources>
+

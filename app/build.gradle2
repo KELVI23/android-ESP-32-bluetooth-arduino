@@ -1,0 +1,52 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion '29.0.2'
+
+    defaultConfig {
+        applicationId "com.google.samples.quickstart.signin"
+        minSdkVersion 18
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    packagingOptions {
+        exclude 'LICENSE.txt'
+        exclude 'META-INF/DEPENDENCIES'
+    }
+
+    // Resolve dependency differences between app and tests
+    configurations.all {
+        resolutionStrategy.force 'com.android.support:support-annotations:27.1.0'
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'com.google.android.material:material:1.0.0'
+
+    // Dependency for Google Sign-In
+    implementation 'com.google.android.gms:play-services-auth:17.0.0'
+
+    // Dependencies for the REST API example
+    implementation 'com.google.api-client:google-api-client:1.30.5'
+    implementation 'com.google.api-client:google-api-client-android:1.30.5'
+    implementation 'com.google.apis:google-api-services-people:v1-rev99-1.22.0'
+
+    // UiAutomatorTesting
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test:rules:1.2.0'
+    androidTestImplementation 'androidx.test.uiautomator:uiautomator:2.2.0'
+    androidTestImplementation 'androidx.annotation:annotation:1.1.0'
+}

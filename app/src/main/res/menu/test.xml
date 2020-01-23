@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/statusMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8pt"
+        android:textSize="10pt"
+        android:textColor="@color/cardview_dark_background"
+        android:layout_gravity="center"/>
+
+    <Button
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/button_PairedDevices"
+        android:layout_gravity="center"
+        android:onClick="searchPairedDevices"
+        android:text="Paired Devices" />
+
+    <Button
+        android:id="@+id/button_DiscoveredDevices"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:onClick="discoverDevices"
+        android:text="Start device discovery" />
+
+    <Button
+        android:id="@+id/button_WaitConnection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:onClick="waitConnection"
+        android:text="Wait \ connection" />
+
+    <Button
+        android:id="@+id/button_TryConnection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:onClick="connect"
+        android:text="Connect" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText_MessageBox"
+        />
+
+    <Button
+        android:id="@+id/button_Send"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="108dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:onClick="sendMessage"
+        android:text="Send" />
+
+
+</LinearLayout>

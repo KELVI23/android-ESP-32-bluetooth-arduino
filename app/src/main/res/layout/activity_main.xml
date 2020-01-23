@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+
+    sign_in_button
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/content_main"
+        app:layout_anchor="@+id/statusMessage"
+        app:layout_anchorGravity="bottom|center" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        app:srcCompat="@android:drawable/ic_dialog_email" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+<!--    <ScrollView-->
+<!--        android:id="@+id/scrollView2"-->
+<!--        android:layout_width="200dp"-->
+<!--        android:layout_height="248dp"-->
+<!--        android:scrollbarStyle="insideInset">-->
+
+<!--        &lt;!&ndash;        <LinearLayout&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:orientation="vertical" />&ndash;&gt;-->
+<!--        &lt;!&ndash;   &ndash;&gt;-->
+
+
+<!--        <View-->
+<!--            android:id="@+id/view"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:layout_anchor="@+id/scrollView2"-->
+<!--            app:layout_anchorGravity="center" />-->
+<!--    </ScrollView>-->
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_anchor="@+id/include"
+        app:layout_anchorGravity="center">
+
+        <TextView
+            android:id="@+id/statusMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8pt"
+            android:text="Hello World!"
+            android:textColor="@color/cardview_dark_background"
+            android:textSize="10pt"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button_PairedDevices"
+            android:layout_width="146dp"
+            android:layout_height="44dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="220dp"
+            android:onClick="searchPairedDevices"
+            android:text="Paired Devices"
+            app:layout_constraintBottom_toTopOf="@+id/button_TryConnection"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/statusMessage" />
+
+        <Button
+            android:id="@+id/button_DiscoveredDevices"
+            android:layout_width="191dp"
+            android:layout_height="51dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="104dp"
+            android:onClick="discoverDevices"
+            android:text="Start device discovery"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.944"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/statusMessage"
+            app:layout_constraintVertical_bias="0.96" />
+
+        <Button
+            android:id="@+id/button_WaitConnection"
+            android:layout_width="172dp"
+            android:layout_height="53dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:onClick="waitConnection"
+            android:text="Wait \ connection"
+            app:layout_constraintBottom_toTopOf="@+id/button_DiscoveredDevices"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/button_PairedDevices"
+            app:layout_constraintTop_toBottomOf="@+id/statusMessage" />
+
+        <Button
+            android:id="@+id/button_TryConnection"
+            android:layout_width="137dp"
+            android:layout_height="43dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="152dp"
+            android:onClick="connect"
+            android:text="Connect"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/button_DiscoveredDevices"
+            app:layout_constraintHorizontal_bias="0.432"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/statusMessage"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <EditText
+            android:id="@+id/editText_MessageBox"
+            android:layout_width="201dp"
+            android:layout_height="33dp"
+            android:layout_marginStart="76dp"
+            app:layout_constraintBottom_toTopOf="@+id/button_Send"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.216"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.602" />
+
+        <Button
+            android:id="@+id/button_Send"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="108dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="132dp"
+            android:layout_marginTop="240dp"
+            android:onClick="sendMessage"
+            android:text="Send"
+            app:layout_constraintBottom_toTopOf="@+id/statusMessage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.064"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
