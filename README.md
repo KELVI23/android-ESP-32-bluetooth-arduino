@@ -1,3 +1,12 @@
+The purpose of the Android app is to establish a two-way communication system with Bluetooth-Low-Energy for Critical Environment Technologies Inc. It is able to control for example an LED on/off remotely and we'll also be able to see some arbitrary values that are sent from the ESP32 to the Android app. Depending on the chosen application, the IoT device the possibilities range from facial recognition door locks to IoT Based Smart Water Irrigation System and door state sensor readings for a home security system.
+
+The application is coherent and made up of 6 Java classes in well-commented code with the ESP32 (acting as the server) "notifies" the client via the TX characteristic UUID and data is sent to the ESP32 and received via the RX characteristic UUID. However, since there is sending and receiving, TX on the ESP32 is actually RX on the Android app.
+
+Made use of the google sign-In API but it is currently disabled and can be enabled by signing up for a free client Server ID with google. The main focus was on functionality and the back-end of the app.
+
+#Requirements:
+Minimum Android SDK version 26.
+
 Google Sign-In Quickstart
 =========================
 
