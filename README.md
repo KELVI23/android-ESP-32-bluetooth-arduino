@@ -4,7 +4,7 @@ The application is coherent and made up of 6 Java classes in well-commented code
 
 Made use of the google sign-In API but it is currently disabled and can be enabled by signing up for a free client Server ID with google. The main focus was on functionality and the back-end of the app.
 
-#Requirements:
+*Requirements:*
 Minimum Android SDK version 26.
 
 Google Sign-In Quickstart
