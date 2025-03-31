@@ -1,60 +1,58 @@
-The purpose of the Android app is to establish a two-way communication system with Bluetooth-Low-Energy for Critical Environment Technologies Inc. It is able to control, for example an LED on/off remotely, and we'll also be able to see some arbitrary values that are sent from the ESP32 to the Android app. Depending on the chosen application, the IoT device's possible use cases range from facial recognition door locks to IoT-based smart water irrigation systems and door state sensor readings for a home security system.
+# Android ESP32 Bluetooth Communication App (Open Source)
 
-The application is easily scalable and made up of 6 Java classes in well-commented code with the ESP32 (acting as the server) "notifying" the client via the TX characteristic UUID, and data is sent to the ESP32 and received via the RX characteristic UUID. However, since there is sending and receiving, TX on the ESP32 is actually RX on the Android app.
+This open source Android application provides a foundation for establishing a two-way Bluetooth Low Energy (BLE) communication system with an ESP32 module. The app can control hardware (for example, turning an LED on/off remotely), is easly tailored to your intended use case and display sensor data sent from the ESP32. Depending on the use case, the IoT device can support applications ranging from facial recognition door locks to smart water irrigation systems and home security sensors.
 
-Made use of the Google sign-In API, but it is currently disabled and can be enabled by signing up for a free client Server-ID with Google. The main focus was on functionality and the back-end of the app.
+## Features
 
-*Requirements:*
-Minimum Android SDK version 26.
+- **Two-Way BLE Communication**
+  - **Control:** Send commands (e.g., LED on/off) from the Android app.
+  - **Monitoring:** Receive data from the ESP32 via BLE.
+- **Scalable Architecture**
+  - Built using six well-commented Java classes.
+  - Uses BLE characteristics: the ESP32 notifies via its TX UUID while the Android app receives on its RX UUID (and vice versa).
+- **Optional Google Sign-In Integration**
+  - Integrated with the Google Sign-In API (currently disabled). Enable it by signing up for a free client Server-ID with Google if needed.
 
-Google Sign-In Quickstart
-=========================
+## How It Works
 
-The Google Sign-In Android quickstart demonstrates how to authenticate a user with GoogleSignInClient.
+- **ESP32 as BLE Server:** The ESP32 broadcasts data via the TX characteristic UUID.
+- **Android App as BLE Client:** The app receives data on its RX characteristic (corresponding to the ESP32's TX) and sends commands back via its TX (received by the ESP32’s RX).
+- The code is designed to be easily scalable, making it adaptable for different IoT scenarios.
 
-Introduction
-------------
+## Requirements
 
-- [Read more about Google Sign-In](https://developers.google.com/identity/sign-in/)
+- **Android SDK:** Minimum version 26.
+- **Hardware:** An Android device with BLE support and an ESP32 module.
+- **Development:** Android Studio.
 
-Getting Started
----------------
+## Getting Started
 
-- Follow the [quickstart guide](https://developers.google.com/identity/sign-in/android/start) to set up your project in Android Studio.
-- Run the sample on your Android device or emulator.
-- The running sample allows Google accounts on the device to sign-in.
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/KELVI23/android-ESP-32-bluetooth-arduino.git
+   cd android-ESP-32-bluetooth-arduino
+2. **Open in Android Studio:**
+   - Import the project.
+   - Ensure your project targets Android SDK 26 or higher.
+3. **Configure BLE:**
+   - Enable BLE on your Android device.
+   - Pair the device with your ESP32.
+4. **(Optional) Enable Google Sign-In:**
+   - Follow the [Google Sign-In Quickstart Guide](https://developers.google.com/identity/sign-in/android/start) to obtain a client Server-ID.
+   - Configure your project settings to enable Google Sign-In.
+5. **Run the App:**
+   - Build and deploy the app on your device or emulator.
+   - Test by sending commands (e.g., toggling an LED) and verifying that data is received from the ESP32.
 
-Screenshots
------------
-![Screenshot](app/src/main/sign-in-sample.png)
 
-Support
--------
+## Support
 
-- Stack Overflow: http://stackoverflow.com/questions/tagged/google-identity
+For issues or feature requests, please open an issue on the [GitHub Issues](https://github.com/KELVI23/android-ESP-32-bluetooth-arduino/issues) page.
 
-If you've found an error in this sample, please file an issue:
-https://github.com/googlesamples/google-services/issues
+## Contributing
 
-Patches are encouraged, and may be submitted by forking this project and
-submitting a pull request through GitHub.
+Contributions are welcome! Please fork this repository and submit a pull request with your improvements.
 
-License
--------
+## License
 
-Copyright 2015 Google, Inc.
-
-Licensed to the Apache Software Foundation (ASF) under one or more contributor
-license agreements.  See the NOTICE file distributed with this work for
-additional information regarding copyright ownership.  The ASF licenses this
-file to you under the Apache License, Version 2.0 (the "License"); you may not
-use this file except in compliance with the License.  You may obtain a copy of
-the License at
-
-  http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
-WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
-License for the specific language governing permissions and limitations under
-the License.
+This project is licensed under the Apache License, Version 2.0. See the [LICENSE](LICENSE) file for details.
