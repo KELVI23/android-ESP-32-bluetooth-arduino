@@ -52,7 +52,3 @@ For issues or feature requests, please open an issue on the [GitHub Issues](http
 ## Contributing
 
 Contributions are welcome! Please fork this repository and submit a pull request with your improvements.
-
-## License
-
-This project is licensed under the Apache License, Version 2.0. See the [LICENSE](LICENSE) file for details
